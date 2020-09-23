@@ -12,6 +12,7 @@ var compression = require('compression');
 var helmet = require('helmet');
 
 var app = express();
+const port = 3000
 
 
 // Set up mongoose connection
@@ -57,4 +58,8 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-module.exports = app;
+//module.exports = app;
+
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`)
+})
